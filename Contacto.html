@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte Remoto</title>
-    <link rel="icon" type="image/jpg" href="Logo.jpg">
+    {% load static %}
+    <link rel="icon" type="image/jpg" href="{% static 'img/Logo.jpg' %}">
     <!-- Comentarios -->
     <style>
         * {
             margin: 0;
             box-sizing: border-box;
-            font-size: 20px;
-            font-family:fantasy
+            font-size: 15.8px;
+            font-size: fantasy;
         }
 
         body {
             overflow: hidden;
-            background-image: url('fondo-de-pantalla-3840x2160.-fondo-de-pantalla-4k-ultra-hd-azules-scaled.jpg');
+            background-image: url("{% static 'img/fondo-de-pantalla-3840x2160.-fondo-de-pantalla-4k-ultra-hd-azules-scaled.jpg' %}");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

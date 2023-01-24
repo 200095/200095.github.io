@@ -1,24 +1,27 @@
+{% extends "CSV/layout.html" %}
+{% block body %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="icon" type="image/jpg" href="Logo.jpg">
+    {% load static %}
+    <link rel="icon" type="image/jpg" href="{% static 'img/Logo.jpg' %}">
     <!-- Comentarios -->
     <style>
         * {
             margin: 0;
             box-sizing: border-box;
-            font-size: 20px;
-            font-family:fantasy
+            font-size: 15.8px;
+            font-size: fantasy;
         }
 
         body {
             overflow: hidden;
-            background-image: url('pink-blue-purple-swirl-abstract-art-4k-abstract.jpg');
+            background-image: url("{% static 'img/pink-blue-purple-swirl-abstract-art-4k-abstract.jpg' %}");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -49,6 +52,7 @@
             margin-top: 15%;
             background: #00000080;
             padding: 20px 50px;
+            
         }
 
         #login-box h2 {
@@ -71,7 +75,7 @@
             font-size: 18px;
         }
 
-        #login-box button {
+        #login-box input[type=submit] {
             border: 0;
             width: 150px;
             height: 30px;
@@ -81,34 +85,38 @@
             border-radius: 25px;
             background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
         }
+        .boton {
+            float: right;
+        }
     </style>
 </head>
 
 <body>
     <button style="background-color:chocolate;"><a href="index.html"
-            style="text-decoration:none;color:black;background-color: chocolate;">Volver a la Página
-            Principal</a></button>
+        style="text-decoration:none;color:black;background-color: chocolate;">Volver a la Página
+        Principal</a></button>
+    <button class="boton" style="background-color:rgb(224, 51, 51);"><a href="add"
+            style="text-align:left;text-decoration:none;color:black;background-color: rgb(224, 51, 51);">Ver Página de Usuarios</a></button>
     <div id="body">
         <div id="csv">
             <h1>Iniciar Sesión</h1>
         </div>
-        <form action="Página_Principal.html" method="POST">
+        <form action="{% url 'CSV:iniciar' %}" method="POST">
             <div id="login-box">
                 <h2>Login</h2>
+                {% csrf_token %}
                 <div class="form">
                     <div class="item">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        <input type="text" placeholder="Usuario" name="username">
-                    </div> 
-
+                        {{ form.csv }}
+                    </div>
                     <div class="item">
-                        <i class="fa fa-key" aria-hidden="true"></i>
-                        <input type="password" placeholder="Contraseña" name="password">
+                        {{ form.prioridad }}
                     </div>
                 </div>
-                <button type="submit">Login</button>
+                <input type="submit" type="submit" value="Login">
             </div>
         </form>
 </body>
 
 </html>
+{% endblock %}

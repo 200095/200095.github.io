@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte Remoto</title>
-    <link rel="icon" type="image/jpg" href="Logo.jpg">
+    {% load static %}
+    <link rel="icon" type="image/jpg" href="{% static 'img/Logo.jpg' %}">
     <!-- Comentarios -->
     <style>
         * {
             margin: 0;
             box-sizing: border-box;
-            font-size: 20px;
-            font-family:fantasy
+            font-size: 15.8px;
+            font-size: fantasy;
         }
 
         body {
             overflow: hidden;
-            background-image: url('2022-04-25-Neon.jpg');
+            background-image: url("{% static 'img/2022-04-25-Neon.jpg' %}");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -50,6 +51,7 @@
 </head>
 
 <body>
+    {% load static %}
     <button style="background-color:chocolate;"><a href="index.html"
             style="text-decoration:none;color:black;background-color: chocolate;">Volver a la Página
             Principal</a></button>
@@ -59,10 +61,11 @@
         </div>
         <br>
         <br>
+        <br>
         <div>
             <div>
                 <h2 style="color: cornflowerblue;">TeamViewer <a href="https://www.teamviewer.com/es/"><img
-                            src="TeamViewer_Logo_512x512.webp" width="50" height="50"></img></a></h2>
+                            src="{% static 'img/TeamViewer_Logo_512x512.webp' %}" width="50" height="50"></img></a></h2>
                 <p style="color: white;"> TeamViewer es un programa para ordenador cuya función es conectarse
                     remotamente a otro equipo.<br />
                     Entre sus funciones están compartir y controlar escritorios, reuniones en línea, videoconferencias y
@@ -74,7 +77,7 @@
                 </p>
             </div>
             <div>
-                <h2 style="color: red;">AnyDesk <a href="https://anydesk.com/es"><img src="unnamed.webp" width="50"
+                <h2 style="color: red;">AnyDesk <a href="https://anydesk.com/es"><img src="{% static 'img/unnamed.webp' %}" width="50"
                             height="50"></img></a></h2>
                 <p style="color: white;">AnyDesk es una de las mejores aplicaciones de escritorio remoto que puedes
                     encontrar.<br />

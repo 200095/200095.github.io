@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conócenos</title>
-    <link rel="icon" type="image/jpg" href="Logo.jpg">
+    {% load static %}
+    <link rel="icon" type="image/jpg" href="{% static 'img/Logo.jpg' %}">
     <!-- Comentarios -->
     <style>
         * {
             margin: 0;
             box-sizing: border-box;
-            font-size: 19.5px;
-            font-family:fantasy
+            font-size: 15.8px;
         }
 
         body {
-            background-image: url('triangulo-abstracto-papel-pintado-2560x2048_33.jpg');
+            background-image: url("{% static 'img/triangulo-abstracto-papel-pintado-2560x2048_33.jpg' %}");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -28,6 +28,7 @@
             font-size: 8em;
             text-align: center;
             line-height: 50%;
+            font-size: fantasy;
         }
 
         #body {
@@ -90,15 +91,16 @@
 </head>
 
 <body>
-    <button style="background-color:chocolate;"><a id="uno" href="index.html"
+    {% load static %}
+    <button style="background-color:chocolate;"><a id="uno" href="login"
             style="text-decoration:none;color:black;background-color: chocolate;">Volver a la Página
             Principal</a></button>
     <div id="body">
         <div id="csv">
             <h1>Conócenos</h1>
         </div>
-        <a id="dos" href="CSV.pdf"
-            style="text-decoration:none;color:white;"><img src="icono-PDF.png" width="50" height="50"><br>
+        <a id="dos" href="{% static 'CSV.pdf' %}"
+            style="text-decoration:none;color:white;"><img src="{% static 'img/icono-PDF.png' %}" width="50" height="50"><br>
             <p>Información</p>
         </a>
         <main>
